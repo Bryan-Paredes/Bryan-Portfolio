@@ -1,12 +1,17 @@
 import {
+  Arrow,
   Avatar,
   Button,
+  Card,
   Column,
   Flex,
+  Grid,
   Heading,
   Icon,
   IconButton,
+  Line,
   Row,
+  Scroller,
   SmartImage,
   Tag,
   Text,
@@ -14,13 +19,20 @@ import {
 import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
-import { person, about, social, newsletter } from "@/app/resources/content";
+import {
+  person,
+  about,
+  social,
+  newsletter,
+  home,
+} from "@/app/resources/content";
 import { Projects } from "@/components/work/Projects";
 import { Mailchimp } from "@/components";
+import ScrollToHash from "@/components/ScrollToHash";
 
 export async function generateMetadata() {
-  const title = about.title;
-  const description = about.description;
+  const title = home.title;
+  const description = home.description;
   const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
 
   return {
@@ -106,39 +118,47 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )} */}
-      <Flex fillWidth mobileDirection="column" horizontal="center">
-        {about.avatar.display && (
-          <Column
-            className={styles.avatar}
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={1}
-            horizontal="center"
-          >
-            <Avatar src={person.avatar} size="xl" />
-            <Flex gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Flex>
-            {person.languages.length > 0 && (
-              <Flex wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
-                    {language}
-                  </Tag>
-                ))}
+      <Flex
+        fillWidth
+        mobileDirection="column"
+        horizontal="center"
+        vertical="center"
+      >
+        <ScrollToHash />
+        <Column flex={9} maxWidth={45}>
+          {about.avatar.display && (
+            <Column
+              // className={styles.avatar}
+              minWidth="160"
+              paddingX="l"
+              paddingBottom="l"
+              gap="m"
+              flex={1}
+              horizontal="center"
+              vertical="center"
+            >
+              <Avatar src={person.avatar} size="xl" />
+              <Flex gap="8" vertical="center">
+                <Icon onBackground="accent-weak" name="location" />
+                {person.location}
               </Flex>
-            )}
-          </Column>
-        )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
+              {person.languages.length > 0 && (
+                <Flex wrap gap="8">
+                  {person.languages.map((language, index) => (
+                    <Tag key={index} size="l">
+                      {language}
+                    </Tag>
+                  ))}
+                </Flex>
+              )}
+            </Column>
+          )}
           <Column
             id={about.intro.title}
             fillWidth
             minHeight="160"
             vertical="center"
+            horizontal="center"
             marginBottom="32"
           >
             {about.calendar.display && (
@@ -177,6 +197,7 @@ export default function About() {
               className={styles.textAlign}
               variant="display-default-xs"
               onBackground="neutral-weak"
+              marginTop="s"
             >
               {person.role}
             </Text>
@@ -275,6 +296,7 @@ export default function About() {
                             as="li"
                             variant="body-default-m"
                             key={`${experience.company}-${index}`}
+                            onBackground="info-weak"
                           >
                             {achievement}
                           </Text>
@@ -323,26 +345,190 @@ export default function About() {
               >
                 {about.studies.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <Column fillWidth gap="m" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
-                  <Column
-                    key={`${institution.name}-${index}`}
-                    fillWidth
-                    gap="4"
-                  >
+                  <>
                     <Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
                     </Text>
-                    <Text
-                      variant="heading-default-xs"
-                      onBackground="neutral-weak"
+                    <Column
+                      as="ul"
+                      key={`${institution.name}-${index}`}
+                      fillWidth
                     >
-                      {institution.description}
-                    </Text>
-                  </Column>
+                      <Text
+                        as="li"
+                        variant="body-default-m"
+                        onBackground="info-weak"
+                      >
+                        {institution.description}
+                      </Text>
+                    </Column>
+                  </>
                 ))}
               </Column>
             </>
+          )}
+
+          {about.projects.display && (
+            <div>
+              <Heading
+                marginY="20"
+                as="h2"
+                id={about.projects.title}
+                variant="display-strong-s"
+                marginBottom="m"
+              >
+                {about.projects.title}
+              </Heading>
+              <Scroller
+                direction="row"
+                fillWidth
+                background="transparent"
+                onBackground="accent-medium"
+                marginY="xl"
+                gap="m"
+              >
+                {/* <Flex fillWidth gap="m" marginBottom="40"> */}
+                <Column fillWidth gap="m" direction="row">
+                  {about.projects.projects.map((project, index) => (
+                    <Card
+                      mobileDirection="column"
+                      radius="l-4"
+                      direction="column"
+                      key={index}
+                    >
+                      {project.images.map((image, index) => (
+                        <Flex>
+                          <SmartImage
+                            key={index}
+                            fillWidth
+                            aspectRatio="4/3"
+                            width={image.width}
+                            height={image.height}
+                            alt={image.alt}
+                            radius="l"
+                            src={image.src}
+                            objectFit="cover"
+                            className="s-flex-max-width-2"
+                          />
+                        </Flex>
+                      ))}
+                      <Column fillWidth paddingX="20" paddingY="24" gap="8">
+                        <Text
+                          // variant="heading-default-s"
+                          as="h3"
+                          onBackground="neutral-strong"
+                          // onBackground="brand-weak"
+                          style={{ fontWeight: 600 }}
+                        >
+                          {project.title}
+                        </Text>
+                        <Text onBackground="neutral-weak" as="p" wrap="balance">
+                          {project.description}
+                        </Text>
+                      </Column>
+                      <Flex fillWidth paddingX="l" paddingY="m" gap="m">
+                        {project.tags.map((tag, index) => (
+                          <Icon
+                            key={index}
+                            size="m"
+                            name={tag}
+                            onBackground="neutral-strong"
+                          />
+                        ))}
+                      </Flex>
+                      <Line background="accent-alpha-medium" />
+                      {project.links.map((link, index) => (
+                        <Row
+                          key={index}
+                          paddingX="20"
+                          paddingY="12"
+                          gap="8"
+                          vertical="center"
+                          textVariant="label-default-s"
+                          onBackground="neutral-weak"
+                        >
+                          <IconButton
+                            size="l"
+                            href={link.github}
+                            icon="github"
+                            variant="secondary"
+                          />
+                          <IconButton
+                            size="l"
+                            href={link.demo}
+                            icon="eye"
+                            variant="secondary"
+                          />
+                          <Button
+                            variant="primary"
+                            size="m"
+                            href={`/work/${project.slug}`}
+                            suffixIcon="arrowRight"
+                          >
+                            <Flex>
+                              <Text>Ver proyecto</Text>
+                              <Arrow trigger="#triger" color="onBackground" />
+                            </Flex>
+                          </Button>
+                        </Row>
+                      ))}
+                    </Card>
+                  ))}
+                  {/* </Flex> */}
+                </Column>
+              </Scroller>
+              {/* <Grid columns={2} gap="24" fillWidth mobileColumns={1}>
+                {about.projects.projects.map((project, index) => (
+                  <Card radius="l-4" direction="column" key={index}>
+                    {project.images.map((image, index) => (
+                      <SmartImage
+                        key={index}
+                        fillWidth
+                        aspectRatio="4/3"
+                        width={image.width}
+                        height={image.height}
+                        alt={image.alt}
+                        radius="l"
+                        src={image.src}
+                        objectFit="cover"
+                        className="s-flex-max-width-2"
+                      />
+                    ))}
+                    <Column fillWidth paddingX="20" paddingY="24" gap="8">
+                      <Text variant="heading-default-xs" as="h3">
+                        {project.title}
+                      </Text>
+                      <Text onBackground="neutral-weak" as="p">
+                        {project.description}
+                      </Text>
+                    </Column>
+                    <Line background="accent-alpha-medium" />
+                    <Row
+                      paddingX="20"
+                      paddingY="12"
+                      gap="8"
+                      vertical="center"
+                      textVariant="label-default-s"
+                      onBackground="neutral-weak"
+                    >
+                      <Button
+                        id="triger"
+                        href="/work"
+                        variant="secondary"
+                        size="m"
+                      >
+                        <Flex>
+                          <Text>Ver proyecto</Text>
+                          <Arrow trigger="#triger" color="onBackground" />
+                        </Flex>
+                      </Button>
+                    </Row>
+                  </Card>
+                ))}
+              </Grid> */}
+            </div>
           )}
 
           {about.technical.display && (

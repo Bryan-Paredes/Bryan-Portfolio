@@ -47,14 +47,6 @@ const home = {
   label: "Home",
   title: `${person.name} Portafolio`,
   description: `Portafolio web que muestra mi trabajo como ${person.role}`,
-  // headline: <>Design engineer and builder</>,
-  // subline: (
-  //   <p>
-  //     I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I
-  //     craft intuitive
-  //     <br /> user experiences. After hours, I build my own projects.
-  //   </p>
-  // ),
 };
 
 const about = {
@@ -62,7 +54,7 @@ const about = {
   title: "About me",
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
-    display: true,
+    display: false,
     subItems: false,
   },
   avatar: {
@@ -88,44 +80,120 @@ const about = {
     title: "Experiencia Laboral",
     experiences: [
       {
+        company: "Freelance",
+        timeframe: "2023 - Presente",
+        role: "Full Stack Developer",
+        achievements: [
+          <p>
+            Desarrollo aplicaciones web completas para clientes, manejando tanto
+            el frontend como en ocasiones el backend para garantizar soluciones
+            eficientes y escalables.
+          </p>,
+        ],
+        images: [],
+      },
+      {
         company: "TPC Express",
-        timeframe: "2024 - 2025",
+        timeframe: "(4 meses) 2024 - 2025",
         role: "Frontend Developer",
         achievements: [
           <p>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20%
-            increase in user engagement and 30% faster load times.
-          </p>,
-          <p>
-            Spearheaded the integration of AI tools into design workflows,
-            enabling designers to iterate 50% faster.
+            Rediseño de pagina web para la empresa de mensajeria TPC Express,
+            enfocado en una interfaz intuitiva y fácil de usar.
           </p>,
         ],
+        images: [],
+      },
+    ],
+  },
+  projects: {
+    display: true, // set to false to hide this section
+    title: "Proyectos",
+
+    projects: [
+      {
+        title: "TPC Express - Freelance",
+        slug: "tpc-express-freelance",
+        description: (
+          <p>
+            Aplicación web que te permite solicitar un servicio de mensajeria de
+            manera rápida y sencilla, como conocer información de la empresa.
+          </p>
+        ),
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/projects/tpcxpress.webp",
             alt: "TPC Express Project",
-            width: 16,
-            height: 9,
+            width: 33,
+            height: 17,
           },
+        ],
+        links: [
+          {
+            github: "https://github.com/Bryan-Paredes/TPCEXPRESS-WEBSITE",
+            demo: "https://tpcxpress.com",
+          },
+        ],
+        tags: ["react", "astro", "tailwindcss", "typescript"],
+      },
+      {
+        title: "Company Dashboard - Proyecto",
+        slug: "company-dashboard-proyecto",
+        description: (
+          <p>
+            Dashboard para gestionar empresas, contactos y reuniones, mostrando
+            datos relevante en su pagna principal todo conectado a una base de
+            datos postgresql en la nube.
+          </p>
+        ),
+        images: [
+          {
+            src: "/images/projects/dashboard-companies.webp",
+            alt: "TPC Express Project",
+            width: 33,
+            height: 17,
+          },
+        ],
+        links: [
+          {
+            github: "https://github.com/Bryan-Paredes/dashboard-companies",
+            demo: "https://dashboard-companies-ten.vercel.app",
+          },
+        ],
+        tags: [
+          "react",
+          "nextjs",
+          "tailwindcss",
+          "typescript",
+          "prisma",
+          "postgresql",
         ],
       },
       {
-        company: "",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple
-            platforms, improving design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line,
-            contributing to a 15% increase in overall company revenue.
-          </>,
+        title: "Bienes Raíces - Proyecto",
+        slug: "bienes-raices-proyecto",
+        description: (
+          <p>
+            Landing Page de Bienes Raíces, permite a los clientes ver las
+            propiedades por categoria y filtrar por precio, tambein permite ver
+            toda la información de las propiedades.
+          </p>
+        ),
+        images: [
+          {
+            src: "/images/projects/real-state.webp",
+            alt: "TPC Express Project",
+            width: 33,
+            height: 17,
+          },
         ],
-        images: [],
+        links: [
+          {
+            github: "https://github.com/Bryan-Paredes/real-state-landingpage",
+            demo: "https://real-state-landingpage.vercel.app/",
+          },
+        ],
+        tags: ["react", "nextjs", "tailwindcss", "typescript"],
       },
     ],
   },
@@ -134,12 +202,20 @@ const about = {
     title: "Estudios",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Autodidacta",
+        description: (
+          <p>He aprendido mediante cursos en línea y proyectos personales.</p>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Bachillerato en Computación",
+        description: (
+          <p>
+            Adquirí conocimientos en el desarrollo de software y el manejo de
+            herramientas tecnológicas, sentando las bases para mi crecimiento
+            como desarrollador.
+          </p>
+        ),
       },
     ],
   },

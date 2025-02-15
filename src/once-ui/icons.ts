@@ -33,12 +33,14 @@ import {
   PiImageDuotone,
 } from "react-icons/pi";
 
-import { FaReact } from "react-icons/fa";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { SiPrisma } from "react-icons/si";
+import { FaReact, FaNodeJs } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiTypescript, SiTailwindcss, SiAstro } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaHtml5, FaCss3Alt } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaHtml5, FaCss3Alt, FaLocationDot } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -80,4 +82,8 @@ export const iconLibrary: Record<string, IconType> = {
   nextjs: RiNextjsFill,
   html5: FaHtml5,
   css3: FaCss3Alt,
+  location: FaLocationDot,
+  node: FaNodeJs,
+  prisma: SiPrisma,
+  postgresql: BiLogoPostgresql,
 };

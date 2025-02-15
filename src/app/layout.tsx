@@ -64,7 +64,6 @@ const code = Source_Code_Pro({
   subsets: ["latin"],
   display: "swap",
 });
-
 interface RootLayoutProps {
   children: React.ReactNode;
 }
@@ -91,8 +90,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         code.variable
       )}
     >
+      <Toaster richColors />
       <ToastProvider>
-        <Toaster richColors />
         <Column
           style={{ minHeight: "100vh" }}
           as="body"
