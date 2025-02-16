@@ -1,4 +1,4 @@
-import { InlineCode } from "@/once-ui/components";
+import { title } from "process";
 
 const person = {
   firstName: "Bryan",
@@ -30,11 +30,6 @@ const social = [
     name: "LinkedIn",
     icon: "linkedin",
     link: "https://www.linkedin.com/in/bryan-paredes-a99130256/",
-  },
-  {
-    name: "X",
-    icon: "x",
-    link: "",
   },
   {
     name: "Email",
@@ -81,7 +76,7 @@ const about = {
     experiences: [
       {
         company: "Freelance",
-        timeframe: "2023 - Presente",
+        timeframe: "2024 - Presente",
         role: "Full Stack Developer",
         achievements: [
           <p>
@@ -127,6 +122,12 @@ const about = {
             width: 33,
             height: 17,
           },
+          {
+            src: "/images/projects/tpcxpress.webp",
+            alt: "TPC Express Project",
+            width: 33,
+            height: 17,
+          },
         ],
         links: [
           {
@@ -135,6 +136,60 @@ const about = {
           },
         ],
         tags: ["react", "astro", "tailwindcss", "typescript"],
+        overview: [
+          {
+            title: "Visión General",
+            description: (
+              <p>
+                Development of a flexible and highly customizable design system
+                using Next.js for front-end and Figma for design collaboration.
+              </p>
+            ),
+          },
+        ],
+        keyFeatures: [
+          {
+            id: 1,
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          },
+          {
+            id: 2,
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          },
+        ],
+        technologies: [
+          {
+            text: (
+              <p>
+                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt.
+              </p>
+            ),
+          },
+          {
+            text: (
+              <p>
+                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt.
+              </p>
+            ),
+          },
+          {
+            text: (
+              <p>
+                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt.
+              </p>
+            ),
+          },
+        ],
+        outcome: [
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris
+          </p>,
+        ],
       },
       {
         title: "Company Dashboard - Proyecto",
@@ -168,6 +223,60 @@ const about = {
           "prisma",
           "postgresql",
         ],
+        overview: [
+          {
+            title: "Visión General",
+            description: (
+              <p>
+                Development of a flexible and highly customizable design system
+                using Next.js for front-end and Figma for design collaboration.
+              </p>
+            ),
+          },
+        ],
+        keyFeatures: [
+          {
+            id: 1,
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          },
+          {
+            id: 2,
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          },
+        ],
+        technologies: [
+          {
+            text: (
+              <p>
+                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt.
+              </p>
+            ),
+          },
+          {
+            text: (
+              <p>
+                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt.
+              </p>
+            ),
+          },
+          {
+            text: (
+              <p>
+                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt.
+              </p>
+            ),
+          },
+        ],
+        outcome: [
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris
+          </p>,
+        ],
       },
       {
         title: "Bienes Raíces - Proyecto",
@@ -194,6 +303,60 @@ const about = {
           },
         ],
         tags: ["react", "nextjs", "tailwindcss", "typescript"],
+        overview: [
+          {
+            title: "Visión General",
+            description: (
+              <p>
+                Development of a flexible and highly customizable design system
+                using Next.js for front-end and Figma for design collaboration.
+              </p>
+            ),
+          },
+        ],
+        keyFeatures: [
+          {
+            id: 1,
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          },
+          {
+            id: 2,
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          },
+        ],
+        technologies: [
+          {
+            text: (
+              <p>
+                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt.
+              </p>
+            ),
+          },
+          {
+            text: (
+              <p>
+                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt.
+              </p>
+            ),
+          },
+          {
+            text: (
+              <p>
+                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt.
+              </p>
+            ),
+          },
+        ],
+        outcome: [
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris
+          </p>,
+        ],
       },
     ],
   },
@@ -338,7 +501,7 @@ const about = {
 const work = {
   label: "Trabajo",
   title: "Mis proyectos",
-  description: `Design and dev projects by ${person.name}`,
+  description: `Proyectos de ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };

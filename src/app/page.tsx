@@ -5,7 +5,6 @@ import {
   Card,
   Column,
   Flex,
-  Grid,
   Heading,
   Icon,
   IconButton,
@@ -17,8 +16,7 @@ import {
   Text,
 } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
-import TableOfContents from "@/components/about/TableOfContents";
-import styles from "@/components/about/about.module.scss";
+import styles from "@/components/about.module.scss";
 import {
   person,
   about,
@@ -26,7 +24,6 @@ import {
   newsletter,
   home,
 } from "@/app/resources/content";
-import { Projects } from "@/components/work/Projects";
 import { Mailchimp } from "@/components";
 import ScrollToHash from "@/components/ScrollToHash";
 
@@ -60,28 +57,6 @@ export async function generateMetadata() {
 }
 
 export default function About() {
-  const structure = [
-    {
-      title: about.intro.title,
-      display: about.intro.display,
-      items: [],
-    },
-    {
-      title: about.work.title,
-      display: about.work.display,
-      items: about.work.experiences.map((experience) => experience.company),
-    },
-    {
-      title: about.studies.title,
-      display: about.studies.display,
-      items: about.studies.institutions.map((institution) => institution.name),
-    },
-    {
-      title: about.technical.title,
-      display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
-    },
-  ];
   return (
     <Column maxWidth="m">
       <script
@@ -106,18 +81,6 @@ export default function About() {
           }),
         }}
       />
-      {/* {about.tableOfContent.display && (
-        <Column
-          left="0"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
-          position="fixed"
-          paddingLeft="24"
-          gap="32"
-          hide="s"
-        >
-          <TableOfContents structure={structure} about={about} />
-        </Column>
-      )} */}
       <Flex
         fillWidth
         mobileDirection="column"
@@ -235,6 +198,23 @@ export default function About() {
                       </>
                     )
                 )}
+                <Button
+                  className="s-flex-hide"
+                  download
+                  href="/document.pdf"
+                  variant="secondary"
+                  size="s"
+                  prefixIcon="download"
+                  label="Curriculum"
+                />
+                <IconButton
+                  className="s-flex-show"
+                  download
+                  href="/document.pdf"
+                  icon="download"
+                  variant="secondary"
+                  size="l"
+                />
               </Flex>
             )}
           </Column>
@@ -389,7 +369,6 @@ export default function About() {
                 marginY="xl"
                 gap="m"
               >
-                {/* <Flex fillWidth gap="m" marginBottom="40"> */}
                 <Column fillWidth gap="m" direction="row">
                   {about.projects.projects.map((project, index) => (
                     <Card
@@ -398,7 +377,20 @@ export default function About() {
                       direction="column"
                       key={index}
                     >
-                      {project.images.map((image, index) => (
+                      <Flex>
+                        <SmartImage
+                          fillWidth
+                          aspectRatio="4/3"
+                          width={project.images[0].width}
+                          height={project.images[0].height}
+                          alt={project.images[0].alt}
+                          radius="l"
+                          src={project.images[0].src}
+                          objectFit="cover"
+                          className="s-flex-max-width-2"
+                        />
+                      </Flex>
+                      {/* {project.images.map((image, index) => (
                         <Flex>
                           <SmartImage
                             key={index}
@@ -413,7 +405,7 @@ export default function About() {
                             className="s-flex-max-width-2"
                           />
                         </Flex>
-                      ))}
+                      ))} */}
                       <Column fillWidth paddingX="20" paddingY="24" gap="8">
                         <Text
                           // variant="heading-default-s"
@@ -464,7 +456,7 @@ export default function About() {
                           <Button
                             variant="primary"
                             size="m"
-                            href={`/work/${project.slug}`}
+                            href={`/project/${project.slug}`}
                             suffixIcon="arrowRight"
                           >
                             <Flex>
@@ -476,58 +468,8 @@ export default function About() {
                       ))}
                     </Card>
                   ))}
-                  {/* </Flex> */}
                 </Column>
               </Scroller>
-              {/* <Grid columns={2} gap="24" fillWidth mobileColumns={1}>
-                {about.projects.projects.map((project, index) => (
-                  <Card radius="l-4" direction="column" key={index}>
-                    {project.images.map((image, index) => (
-                      <SmartImage
-                        key={index}
-                        fillWidth
-                        aspectRatio="4/3"
-                        width={image.width}
-                        height={image.height}
-                        alt={image.alt}
-                        radius="l"
-                        src={image.src}
-                        objectFit="cover"
-                        className="s-flex-max-width-2"
-                      />
-                    ))}
-                    <Column fillWidth paddingX="20" paddingY="24" gap="8">
-                      <Text variant="heading-default-xs" as="h3">
-                        {project.title}
-                      </Text>
-                      <Text onBackground="neutral-weak" as="p">
-                        {project.description}
-                      </Text>
-                    </Column>
-                    <Line background="accent-alpha-medium" />
-                    <Row
-                      paddingX="20"
-                      paddingY="12"
-                      gap="8"
-                      vertical="center"
-                      textVariant="label-default-s"
-                      onBackground="neutral-weak"
-                    >
-                      <Button
-                        id="triger"
-                        href="/work"
-                        variant="secondary"
-                        size="m"
-                      >
-                        <Flex>
-                          <Text>Ver proyecto</Text>
-                          <Arrow trigger="#triger" color="onBackground" />
-                        </Flex>
-                      </Button>
-                    </Row>
-                  </Card>
-                ))}
-              </Grid> */}
             </div>
           )}
 

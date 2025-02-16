@@ -3,7 +3,7 @@ const baseURL = "demo.magic-portfolio.com";
 const routes = {
   "/": true,
   "/about": false,
-  "/work": true,
+  "/work": false,
   "/blog": false,
   "/gallery": false,
 };
@@ -47,7 +47,7 @@ const effects = {
   dots: {
     display: true,
     size: 2,
-    color: "accent-on-background-medium",
+    color: "accent-on-background-weak",
     opacity: 20,
   },
   lines: {
