@@ -39,7 +39,7 @@ export async function generateMetadata() {
       title,
       description,
       type: "website",
-      url: `https://${baseURL}/about`,
+      url: `https://${baseURL}`,
       images: [
         {
           url: ogImage,
@@ -69,7 +69,7 @@ export default function About() {
             name: person.name,
             jobTitle: person.role,
             description: about.intro.description,
-            url: `https://${baseURL}/about`,
+            url: `https://${baseURL}`,
             image: `${baseURL}/images/${person.avatar}`,
             sameAs: social
               .filter((item) => item.link && !item.link.startsWith("mailto:")) // Filter out empty links and email links
