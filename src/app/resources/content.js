@@ -122,12 +122,12 @@ const about = {
             width: 33,
             height: 17,
           },
-          {
-            src: "/images/projects/tpcxpress.webp",
-            alt: "TPC Express Project",
-            width: 33,
-            height: 17,
-          },
+          // {
+          //   src: "/images/projects/tpcxpress.webp",
+          //   alt: "TPC Express Project",
+          //   width: 33,
+          //   height: 17,
+          // },
         ],
         links: [
           {
@@ -141,8 +141,9 @@ const about = {
             title: "Visión General",
             description: (
               <p>
-                Development of a flexible and highly customizable design system
-                using Next.js for front-end and Figma for design collaboration.
+                Rediseño de la página web para la empresa de mensajería TPC
+                Express, enfocado en una interfaz intuitiva y fácil de usar para
+                la solicitud de servicios.
               </p>
             ),
           },
@@ -150,44 +151,54 @@ const about = {
         keyFeatures: [
           {
             id: 1,
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            text: "La aplicación web permite a los usuarios solicitar un servicio de mensajería como contacto con la empresa de forma más rápida, mediante una red social como WhatsApp y un formulario de contacto.",
           },
           {
             id: 2,
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            text: "Se tomó como prioridad la experiencia del usuario y la facilidad de uso, por lo que se ha implementado un formulario de cotización rápida con validaciones de campos y un sistema de validaciones para evitar errores en la entrada de datos.",
           },
         ],
         technologies: [
           {
             text: (
               <p>
-                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt.
+                <strong>Astro: </strong>Para mejorar la velocidad de carga de la
+                página web y optimizar el SEO.
               </p>
             ),
           },
           {
             text: (
               <p>
-                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt.
+                <strong>React: </strong>Para mejorar la experiencia del usuario
+                e implementar una librería de componentes como HeroUI.
               </p>
             ),
           },
           {
             text: (
               <p>
-                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt.
+                <strong>Tailwind: </strong>Dando diseño rápido y consistente a
+                la página web.
+              </p>
+            ),
+          },
+          {
+            text: (
+              <p>
+                <strong>TypeScript: </strong>Mejora de tipado y seguridad de la
+                aplicación.
               </p>
             ),
           },
         ],
         outcome: [
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris
+            Se han alcanzado los puntos más importantes para el cliente,
+            logrando un alto rendimiento y una buena configuración de SEO,
+            además de contar con una forma fácil de cotizar servicios y
+            solicitarlos mediante un formulario, ofreciendo en todo momento
+            transparencia a los usuarios.
           </p>,
         ],
       },
@@ -228,8 +239,10 @@ const about = {
             title: "Visión General",
             description: (
               <p>
-                Development of a flexible and highly customizable design system
-                using Next.js for front-end and Figma for design collaboration.
+                Dashboard para empresas que permite agregar, editar y eliminar
+                registros de empresas, contactos enlazados a cada empresa y la
+                opción de un calendario en el cual se pueden agregar y eliminar
+                eventos o reuniones importantes.
               </p>
             ),
           },
@@ -237,44 +250,72 @@ const about = {
         keyFeatures: [
           {
             id: 1,
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            text: "Interfaz de Usuario Dinámica: Gracias a Next.js y React, el panel ofrece una experiencia interactiva y fluida para el usuario.",
           },
           {
             id: 2,
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            text: "Estilos Consistentes y Responsivos: La integración de Tailwind CSS asegura una apariencia uniforme y adaptativa en diferentes dispositivos.",
+          },
+          {
+            id: 3,
+            text: "Gestión Eficiente de Datos: Prisma facilita operaciones CRUD rápidas y seguras sobre la base de datos PostgreSQL.",
+          },
+          {
+            id: 4,
+            text: "Despliegue en la Nube: Alojado en Vercel, el proyecto garantiza una entrega de contenido rápida y confiable a nivel global.",
           },
         ],
         technologies: [
           {
             text: (
               <p>
-                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt.
+                <strong>NextJS: </strong>Mejora de rendimiento con SSR y
+                facilidades de despliegue.
               </p>
             ),
           },
           {
             text: (
               <p>
-                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt.
+                <strong>React: </strong>Mejorar experiencia e interfaz de
+                usuario dinámicas con componentes reutilizables.
               </p>
             ),
           },
           {
             text: (
               <p>
-                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt.
+                <strong>Tailwind: </strong>Diseño rapido y consistente con
+                componentes de React.
+              </p>
+            ),
+          },
+          {
+            text: (
+              <p>
+                <strong>Prisma: </strong>Integración rápida de bases de datos y
+                manejo de datos, errores, validaciones y seguridad de forma más
+                rápida.
+              </p>
+            ),
+          },
+          {
+            text: (
+              <p>
+                <strong>PostgreSQL: </strong>Alto rendimiento y escalabilidad de
+                bases de datos relacionales.
               </p>
             ),
           },
         ],
         outcome: [
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris
+            Más que solo una interfaz para gestionar datos empresariales, este
+            proyecto está diseñado para ser intuitivo, rápido y seguro,
+            permitiendo a los usuarios acceder y administrar información de
+            manera sencilla y eficaz. Su arquitectura permite el mantenimiento y
+            la escalabilidad, también asegura una experiencia de usuario
+            optimizada en distintos dispositivos.
           </p>,
         ],
       },
@@ -308,8 +349,9 @@ const about = {
             title: "Visión General",
             description: (
               <p>
-                Development of a flexible and highly customizable design system
-                using Next.js for front-end and Figma for design collaboration.
+                Página para una agencia inmobiliaria, diseñada para facilitar la
+                visualizacion y datos de las propiedades. La plataforma ofrece
+                una experiencia de usuario moderna y eficiente.
               </p>
             ),
           },
@@ -317,44 +359,55 @@ const about = {
         keyFeatures: [
           {
             id: 1,
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            text: "Interfaz de usuario atractiva y responsiva: La página presenta un diseño limpio y adaptable a diferentes dispositivos, mejorando la accesibilidad para todos los usuarios.",
           },
           {
             id: 2,
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            text: "Funcionalidades clave para el sector inmobiliario: La plataforma permite a los usuarios visualizar las propiedades disponibles según categoría y precio, facilitando la navegación y selección de inmuebles.",
           },
         ],
         technologies: [
           {
             text: (
               <p>
-                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt.
+                <strong>NextJS: </strong>Mejora de rendimiento con SSR y
+                facilidades de despliegue.
               </p>
             ),
           },
           {
             text: (
               <p>
-                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt.
+                <strong>React: </strong>Mejorar experiencia e interfaz de
+                usuario dinámicas con componentes reutilizables.
               </p>
             ),
           },
           {
             text: (
               <p>
-                <strong>React: </strong>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt.
+                <strong>Tailwind: </strong>Diseño rapido y consistente con
+                componentes de React.
+              </p>
+            ),
+          },
+          {
+            text: (
+              <p>
+                <strong>TypeScript: </strong>Mejora de tipado y seguridad de la
+                aplicación.
               </p>
             ),
           },
         ],
         outcome: [
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris
+            La aplicación está pensada para facilitar la visualización y el
+            filtrado de propiedades. La página proporciona a los usuarios una
+            experiencia intuitiva, permitiéndoles encontrar inmuebles de manera
+            rápida y sencilla. Además, su desarrollo con TypeScript asegura un
+            código más seguro y fácil de mantener, lo que contribuye a su
+            escalabilidad y estabilidad a largo plazo.
           </p>,
         ],
       },
@@ -498,13 +551,13 @@ const about = {
 //   // All posts will be listed on the /blog route
 // };
 
-const work = {
-  label: "Trabajo",
-  title: "Mis proyectos",
-  description: `Proyectos de ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
-};
+// const work = {
+//   label: "Trabajo",
+//   title: "Mis proyectos",
+//   description: `Proyectos de ${person.name}`,
+//   // Create new project pages by adding a new .mdx file to app/blog/posts
+//   // All projects will be listed on the /home and /work routes
+// };
 
 // const gallery = {
 //   label: "Gallery",
@@ -585,4 +638,4 @@ const work = {
 //   ],
 // };
 
-export { person, social, newsletter, about, work, home };
+export { person, social, newsletter, about, home };

@@ -71,13 +71,14 @@ export default function About() {
             description: about.intro.description,
             url: `https://${baseURL}`,
             image: `${baseURL}/images/${person.avatar}`,
+
             sameAs: social
               .filter((item) => item.link && !item.link.startsWith("mailto:")) // Filter out empty links and email links
               .map((item) => item.link),
-            worksFor: {
-              "@type": "Organization",
-              name: about.work.experiences[0].company || "",
-            },
+            // worksFor: {
+            //   "@type": "Organization",
+            //   name: about.work.experiences[0].company || "",
+            // },
           }),
         }}
       />
