@@ -202,7 +202,7 @@ export default function About() {
                 <Button
                   className="s-flex-hide"
                   download
-                  href="/document.pdf"
+                  href="/cv.pdf"
                   variant="secondary"
                   size="s"
                   prefixIcon="download"
@@ -211,7 +211,7 @@ export default function About() {
                 <IconButton
                   className="s-flex-show"
                   download
-                  href="/document.pdf"
+                  href="/cv.pdf"
                   icon="download"
                   variant="secondary"
                   size="l"
