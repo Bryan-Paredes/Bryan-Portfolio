@@ -1,9 +1,12 @@
 import { Flex, IconButton, SmartLink, Text } from "@/once-ui/components";
-import { person, social } from "@/app/resources/content";
+import { getDictionary } from "@/app/resources/dictionaries";
+import { Locale } from "@/i18n.config";
 import styles from "./Footer.module.scss";
 
-export const Footer = () => {
+export const Footer = async ({ locale }: { locale: Locale }) => {
   const currentYear = new Date().getFullYear();
+  const dict = await getDictionary(locale);
+  const { person, social } = dict;
 
   return (
     <Flex

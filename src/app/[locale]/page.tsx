@@ -1,33 +1,26 @@
 import {
-  Arrow,
   Avatar,
   Button,
-  Card,
   Column,
   Flex,
   Heading,
   Icon,
   IconButton,
-  Line,
-  Row,
-  Scroller,
   SmartImage,
   Tag,
   Text,
 } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import styles from "@/components/about.module.scss";
-import {
-  person,
-  about,
-  social,
-  newsletter,
-  home,
-} from "@/app/resources/content";
+import { getDictionary } from "@/app/resources/dictionaries";
+import { Locale } from "@/i18n.config";
 import { Mailchimp } from "@/components";
+import { ProjectCard } from "@/components/ProjectCard";
 import ScrollToHash from "@/components/ScrollToHash";
 
-export async function generateMetadata() {
+export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(locale);
+  const home = dict.home;
   const title = home.title;
   const description = home.description;
   const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
@@ -56,7 +49,10 @@ export async function generateMetadata() {
   };
 }
 
-export default function About() {
+export default async function About({ params: { locale } }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(locale);
+  const { person, about, social, newsletter, home } = dict;
+
   return (
     <Column maxWidth="m">
       <script
@@ -362,115 +358,25 @@ export default function About() {
               >
                 {about.projects.title}
               </Heading>
-              <Scroller
-                direction="row"
-                fillWidth
-                background="transparent"
-                onBackground="accent-medium"
-                marginY="xl"
-                gap="m"
-              >
-                <Column fillWidth gap="m" direction="row">
-                  {about.projects.projects.map((project, index) => (
-                    <Card
-                      mobileDirection="column"
-                      radius="l-4"
-                      direction="column"
-                      key={index}
-                    >
-                      <Flex>
-                        <SmartImage
-                          fillWidth
-                          aspectRatio="4/3"
-                          width={project.images[0].width}
-                          height={project.images[0].height}
-                          alt={project.images[0].alt}
-                          radius="l"
-                          src={project.images[0].src}
-                          objectFit="cover"
-                          className="s-flex-max-width-2"
-                        />
-                      </Flex>
-                      {/* {project.images.map((image, index) => (
-                        <Flex>
-                          <SmartImage
-                            key={index}
-                            fillWidth
-                            aspectRatio="4/3"
-                            width={image.width}
-                            height={image.height}
-                            alt={image.alt}
-                            radius="l"
-                            src={image.src}
-                            objectFit="cover"
-                            className="s-flex-max-width-2"
-                          />
-                        </Flex>
-                      ))} */}
-                      <Column fillWidth paddingX="20" paddingY="24" gap="8">
-                        <Text
-                          // variant="heading-default-s"
-                          as="h3"
-                          onBackground="neutral-strong"
-                          // onBackground="brand-weak"
-                          style={{ fontWeight: 600 }}
-                        >
-                          {project.title}
-                        </Text>
-                        <Text onBackground="neutral-weak" as="p" wrap="balance">
-                          {project.description}
-                        </Text>
-                      </Column>
-                      <Flex fillWidth paddingX="l" paddingY="m" gap="m">
-                        {project.tags.map((tag, index) => (
-                          <Icon
-                            key={index}
-                            size="m"
-                            name={tag}
-                            onBackground="neutral-strong"
-                          />
-                        ))}
-                      </Flex>
-                      <Line background="accent-alpha-medium" />
-                      {project.links.map((link, index) => (
-                        <Row
-                          key={index}
-                          paddingX="20"
-                          paddingY="12"
-                          gap="8"
-                          vertical="center"
-                          textVariant="label-default-s"
-                          onBackground="neutral-weak"
-                        >
-                          <IconButton
-                            size="l"
-                            href={link.github}
-                            icon="github"
-                            variant="secondary"
-                          />
-                          <IconButton
-                            size="l"
-                            href={link.demo}
-                            icon="eye"
-                            variant="secondary"
-                          />
-                          <Button
-                            variant="primary"
-                            size="m"
-                            href={`/project/${project.slug}`}
-                            suffixIcon="arrowRight"
-                          >
-                            <Flex>
-                              <Text>Ver proyecto</Text>
-                              <Arrow trigger="#triger" color="onBackground" />
-                            </Flex>
-                          </Button>
-                        </Row>
-                      ))}
-                    </Card>
-                  ))}
-                </Column>
-              </Scroller>
+              <Column fillWidth gap="l" marginY="xl">
+                {about.projects.projects.map((project, index) => (
+                  <ProjectCard
+                    key={project.slug}
+                    title={project.title}
+                    slug={project.slug}
+                    category={project.category}
+                    role={project.role}
+                    timeframe={project.timeframe}
+                    description={project.description}
+                    images={project.images}
+                    tags={project.tags}
+                    metrics={project.metrics}
+                    links={project.links}
+                    reversed={index % 2 !== 0}
+                    locale={locale}
+                  />
+                ))}
+              </Column>
             </div>
           )}
 

@@ -37,7 +37,7 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import { SiPrisma } from "react-icons/si";
 import { FaReact, FaNodeJs, FaFileDownload } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import { SiTypescript, SiTailwindcss, SiAstro } from "react-icons/si";
+import { SiTypescript, SiTailwindcss, SiAstro, SiSupabase, SiRedis, SiStripe, SiExpo, SiTurborepo } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaHtml5, FaCss3Alt, FaLocationDot } from "react-icons/fa6";
@@ -87,4 +87,10 @@ export const iconLibrary: Record<string, IconType> = {
   prisma: SiPrisma,
   postgresql: BiLogoPostgresql,
   download: FaFileDownload,
+  supabase: SiSupabase,
+  redis: SiRedis,
+  stripe: SiStripe,
+  expo: SiExpo,
+  turborepo: SiTurborepo,
+  reactNative: FaReact,
 };

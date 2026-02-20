@@ -34,7 +34,7 @@ const effects = {
     radius: 75,
   },
   gradient: {
-    display: true,
+    display: false,
     x: 50,
     y: 0,
     width: 100,
@@ -42,13 +42,13 @@ const effects = {
     tilt: 0,
     colorStart: "accent-solid-strong",
     colorEnd: "static-transparent",
-    opacity: 50,
+    opacity: 10,
   },
   dots: {
-    display: true,
+    display: false,
     size: 2,
     color: "accent-on-background-weak",
-    opacity: 20,
+    opacity: 5,
   },
   lines: {
     display: false,
@@ -56,7 +56,7 @@ const effects = {
     opacity: 100,
   },
   grid: {
-    display: true,
+    display: false,
     color: "neutral-alpha-weak",
     opacity: 100,
   },

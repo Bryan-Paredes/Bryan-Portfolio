@@ -8,10 +8,4 @@ export {
   mailchimp,
   baseURL,
 } from "@/app/resources/config";
-export {
-  person,
-  social,
-  newsletter,
-  home,
-  about,
-} from "@/app/resources/content";
+// (Removed static content exports to use localized dictionaries via getDictionary)
